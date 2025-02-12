@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffe6f2;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background-color: #ff4444;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 100px solid #ff6666;
+        }
+
+        .envelope.open {
+            transform: scale(0.8) translateY(-50px);
+        }
+
+        .letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 400px;
+            background-color: white;
+            padding: 20px;
+            display: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .letter.show {
+            display: block;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .envelope.open .heart {
+            opacity: 1;
+        }
+
+        .message {
+            text-align: center;
+            line-height: 1.6;
+            color: #660033;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-style: italic;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" onclick="openEnvelope()">
+            <div class="heart">💖</div>
+        </div>
+        <div class="letter" id="letter">
+            <div class="message">
+                <h2>To My Dearest Love,</h2>
+                <p>On this special day, I want to tell you how much you mean to me. You are the sunshine that brightens my world, the melody that makes my heart sing, and the love that gives my life meaning. 💕</p>
+                <p>Every moment with you is a treasure, and I cherish the way you make me feel. Your smile is my favorite sight, your laugh my favorite sound, and your heart my perfect match.</p>
+                <p>Happy Valentine's Day, my love. May our journey continue to be filled with endless love, laughter, and beautiful memories. I love you more than words can say. 💌</p>
+                <div class="signature">
+                    Forever Yours,<br>
+                    [Your Name]
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            const letter = document.getElementById('letter');
+            
+            envelope.classList.add('open');
+            setTimeout(() => {
+                letter.classList.add('show');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
