@@ -22,9 +22,9 @@ A charming **digital Valentine love letter** with an animated envelope, perfect 
 1. **Clone the repository**  
    https://github.com/cdmatgaganwood03L/valentinne-letter.git
 
-2. **Open index.html in your browser.
-3. **Customize your love letter – Edit the text inside index.html to make it personal.
-4. **Share it with your loved one! 💖
+2. Open index.html in your browser.
+3. Customize your love letter – Edit the text inside index.html to make it personal.
+4. Share it with your loved one! 💖
    
 ## 💕 Contributing
 Feel free to fork this project, customize it, and spread love this Valentine’s Day! If you have any suggestions, feel free to open an issue or pull request.
